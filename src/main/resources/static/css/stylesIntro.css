@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f0fa;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+    max-width: 960px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(170, 150, 220, 0.2);
+    padding: 24px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e0d6f5;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6a5acd;
+    text-decoration: none;
+}
+
+.navbar nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #7d6db1;
+}
+
+.navbar nav a:hover {
+    text-decoration: underline;
+}
+
+form {
+    text-align: right;
+    margin-top: 16px;
+}
+
+form button {
+    padding: 8px 16px;
+    background-color: #a48cd9;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #8c6dc7;
+}
+
+.intro-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.intro-image img {
+    width: 320px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.intro-text {
+    max-width: 500px;
+    font-size: 18px;
+    line-height: 2;
+}
+
+.intro-text h2 {
+    color: #8c6dc7;
+    margin-bottom: 16px;
+}
+
+.small-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 12px;
+    transition: transform 0.3s;
+}
+
+.small-image:hover {
+    transform: scale(1.05);
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 40px;
+}

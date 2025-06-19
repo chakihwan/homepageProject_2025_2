@@ -1,128 +1,62 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차주원 - 성장일지</title>
-    <link rel="stylesheet" href="/css/stylesMain.css" th:href="@{/css/stylesMain.css}">
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var imagesData = [
-                {
-                    elementId: 'mainImage1',
-                    imagePaths: ['/imgs/main_1.jpg', '/imgs/main_2.jpg', '/imgs/main_3.jpg'],
-                    currentIndex: 0
-                },
-                {
-                    elementId: 'mainImage2',
-                    imagePaths: ['/imgs/main_4.jpg', '/imgs/main_5.jpg', '/imgs/main_6.jpg'],
-                    currentIndex: 0
-                },
-                {
-                    elementId: 'mainImage3',
-                    imagePaths: ['/imgs/main_7.jpg', '/imgs/main_8.jpg', '/imgs/main_9.jpg'],
-                    currentIndex: 0
-                },
-                {
-                    elementId: 'mainImage4',
-                    imagePaths: ['/imgs/main_10.jpg', '/imgs/main_11.jpg', '/imgs/main_12.jpg'],
-                    currentIndex: 0
-                }
-            ];
-            var changeInterval = 3000;
-
-            function createImageSlider(imageData) {
-                var imgElement = document.getElementById(imageData.elementId);
-                function changeImage() {
-                    imageData.currentIndex = (imageData.currentIndex + 1) % imageData.imagePaths.length;
-                    imgElement.src = imageData.imagePaths[imageData.currentIndex];
-                }
-                setInterval(changeImage, changeInterval);
-            }
-
-            imagesData.forEach(createImageSlider);
-        });
-
-        function changeImageOnHover(element, hoverSrc, originalSrc) {
-            element.addEventListener('mouseover', () => element.src = hoverSrc);
-            element.addEventListener('mouseout', () => element.src = originalSrc);
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var images = [
-                { id: 'image1', hoverSrc: '/imgs/linkjuju_2.jpg', originalSrc: '/imgs/linkjuju.jpg' },
-                { id: 'image2', hoverSrc: '/imgs/linkjuju_2.jpg', originalSrc: '/imgs/linkjuju.jpg' },
-                { id: 'image3', hoverSrc: '/imgs/linkjuju_2.jpg', originalSrc: '/imgs/linkjuju.jpg' },
-                { id: 'image4', hoverSrc: '/imgs/linkjuju_2.jpg', originalSrc: '/imgs/linkjuju.jpg' }
-            ];
-            images.forEach(image => {
-                var imgElement = document.getElementById(image.id);
-                changeImageOnHover(imgElement, image.hoverSrc, image.originalSrc);
-            });
-        });
-    </script>
+    <link rel="stylesheet" href="/css/stylesGrowth.css" th:href="@{/css/stylesGrowth.css}">
 </head>
 <body>
 <div class="container">
-    <a th:href="@{/home}">
-        <div class="box">
-            <div class="box-content"></div>
-            <div class="name">차주원</div>
+    <div class="navbar">
+        <a href="/home" class="logo">차주원</a>
+        <nav>
+            <a th:href="@{/home/intro}">소개</a>
+            <a th:href="@{/home/growth-log}">성장일지</a>
+            <a th:href="@{/home/photo-album}">사진첩</a>
+            <a th:href="@{/home/contact}">Contact</a>
+        </nav>
+    </div>
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">로그아웃</button>
+    </form>
+
+    <div class="text-center">
+        <h2 class="highlight-text">성장일지</h2>
+        <p>주원이의 소중한 순간들을 기록한 성장 이야기입니다 💕</p>
+    </div>
+
+    <section class="growth-entries">
+        <div class="growth-entry">
+            <img src="/imgs/main_4.jpg" alt="첫걸음">
+            <div class="growth-text">
+                <h3>2024.03.15</h3>
+                <p>주원이 첫걸음! 넘어져도 다시 일어나는 모습에 감동했어요.</p>
+            </div>
         </div>
-    </a>
+        <div class="growth-entry">
+            <img src="/imgs/main_7.jpg" alt="생일케이크">
+            <div class="growth-text">
+                <h3>2024.09.09</h3>
+                <p>첫 생일! 케이크를 만지며 웃는 주원이의 얼굴은 세상에서 제일 귀여웠어요.</p>
+            </div>
+        </div>
+        <div class="growth-entry">
+            <img src="/imgs/main_10.jpg" alt="놀이터">
+            <div class="growth-text">
+                <h3>2025.01.02</h3>
+                <p>처음으로 놀이터에 가서 미끄럼틀을 탔어요. 무서워하면서도 재밌어했답니다!</p>
+            </div>
+        </div>
+    </section>
 
-    <img class="main-image" th:src="@{/imgs/main_1.jpg}" alt="Main Image" id="mainImage1">
-    <div class="text-center text-main">
-        <span class="highlight-text">my lovely baby<br/></span>
-        <span>J U W O N<br/><br/>2024. 9. 9 pm2:43</span>
+    <div class="text-center">
+        <a th:href="@{/home/intro}"><img class="small-image" src="/imgs/linkjuju.jpg" alt="link" id="image1"></a>
+        <a th:href="@{/home/growth-log}"><img class="small-image" src="/imgs/linkjuju.jpg" alt="link" id="image2"></a>
+        <a th:href="@{/home/photo-album}"><img class="small-image" src="/imgs/linkjuju.jpg" alt="link" id="image3"></a>
+        <a th:href="@{/home/contact}"><img class="small-image" src="/imgs/linkjuju.jpg" alt="link" id="image4"></a>
     </div>
-
-    <a th:href="@{/home/intro}">
-        <div class="button button-intro">주원이소개</div>
-    </a>
-
-    <img class="second-image" th:src="@{/imgs/main_4.jpg}" alt="Second Image" id="mainImage2">
-    <div class="text-center text-growth">
-        <span class="highlight-text">since 230909<br/></span>
-        <span>A Growth Journal</span>
-    </div>
-
-    <a th:href="@{/home/growth-log}">
-        <div class="button button-growth">성장일지</div>
-    </a>
-
-    <img class="third-image" th:src="@{/imgs/main_7.jpg}" alt="Third Image" id="mainImage3">
-    <div class="text-center text-picture">
-        <span class="highlight-text">say cheese~ 📸<br/><br/></span>
-        <span>Juwon's picture</span>
-    </div>
-
-    <img class="fourth-image" th:src="@{/imgs/main_10.jpg}" alt="Fourth Image" id="mainImage4">
-
-    <a th:href="@{/home/photo-album}">
-        <div class="button button-picture">사진첩</div>
-    </a>
-    <a th:href="@{/home/contact}">
-        <div class="button button-contact">Contact</div>
-    </a>
-
-    <div class="menu-item menu-contact"><a th:href="@{/home/contact}">Contact</a></div>
-    <div class="menu-item menu-picture"><a th:href="@{/home/photo-album}">사진첩</a></div>
-    <div class="menu-item menu-growth"><a th:href="@{/home/growth-log}">성장일지</a></div>
-    <div class="menu-item menu-intro"><a th:href="@{/home/intro}">주원이소개</a></div>
-
-    <a th:href="@{/home/intro}">
-        <img class="small-image small-image-1" th:src="@{/imgs/linkjuju.jpg}" alt="Small Image" id="image1">
-    </a>
-    <a th:href="@{/home/growth-log}">
-        <img class="small-image small-image-2" th:src="@{/imgs/linkjuju.jpg}" alt="Small Image" id="image2">
-    </a>
-    <a th:href="@{/home/photo-album}">
-        <img class="small-image small-image-3" th:src="@{/imgs/linkjuju.jpg}" alt="Small Image" id="image3">
-    </a>
-    <a th:href="@{/home/contact}">
-        <img class="small-image small-image-4" th:src="@{/imgs/linkjuju.jpg}" alt="Small Image" id="image4">
-    </a>
 </div>
 </body>
 </html>

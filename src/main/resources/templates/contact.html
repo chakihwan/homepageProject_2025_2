@@ -1,80 +1,60 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="/css/stylesSub4.css" th:href="@{/css/stylesSub4.css}">
-    <script>
-        function changeImageOnHover(element, hoverSrc, originalSrc) {
-            element.addEventListener('mouseover', function () {
-                element.src = hoverSrc;
-            });
-            element.addEventListener('mouseout', function () {
-                element.src = originalSrc;
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            var images = [
-                { id: 'image1', hoverSrc: '/imgs/linkjuju_2.jpg', originalSrc: '/imgs/linkjuju.jpg' },
-                { id: 'image2', hoverSrc: '/imgs/linkjuju_2.jpg', originalSrc: '/imgs/linkjuju.jpg' },
-                { id: 'image3', hoverSrc: '/imgs/linkjuju_2.jpg', originalSrc: '/imgs/linkjuju.jpg' },
-                { id: 'image4', hoverSrc: '/imgs/linkjuju_2.jpg', originalSrc: '/imgs/linkjuju.jpg' }
-            ];
-
-            images.forEach(function (image) {
-                var imgElement = document.getElementById(image.id);
-                changeImageOnHover(imgElement, image.hoverSrc, image.originalSrc);
-            });
-        });
-    </script>
+    <title>차주원 - Contact</title>
+    <link rel="stylesheet" href="/css/stylesContact.css" th:href="@{/css/stylesContact.css}">
 </head>
 <body>
-<div style="width: 1920px; height: 2345px; position: relative; background: white">
-    <a th:href="@{/home}">
-        <div class="box">
-            <div class="box-content"></div>
-            <div class="name">차주원</div>
+<div class="container">
+    <div class="navbar">
+        <a href="/home" class="logo">차주원</a>
+        <nav>
+            <a th:href="@{/home/intro}">소개</a>
+            <a th:href="@{/home/growth-log}">성장일지</a>
+            <a th:href="@{/home/photo-album}">사진첩</a>
+            <a th:href="@{/home/contact}">Contact</a>
+        </nav>
+    </div>
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">로그아웃</button>
+    </form>
+
+    <div class="text-center">
+        <h2 class="highlight-text">Contact</h2>
+        <p>주원이의 귀여운 일상과 더 많은 사진이 궁금하다면? 🐣</p>
+    </div>
+
+    <div class="contact-section">
+        <div class="contact-card">
+            <img src="/imgs/imgs2/300_5.jpg" alt="blog">
+            <div>
+                <p><strong>주원 blog</strong></p>
+                <a href="https://blog.naver.com/jidongdong_" target="_blank">
+                    blog.naver.com/jidongdong_
+                </a>
+            </div>
         </div>
-    </a>
 
-    <div class="menu-item menu-contact"><a th:href="@{/home/contact}">Contact</a></div>
-    <div class="menu-item menu-picture"><a th:href="@{/home/photo-album}">사진첩</a></div>
-    <div class="menu-item menu-growth"><a th:href="@{/home/growth-log}">성장일지</a></div>
-    <div class="menu-item menu-intro"><a th:href="@{/home/intro}">주원이소개</a></div>
-    <a th:href="@{/home/intro}">
-        <img class="small-image small-image-1" th:src="@{/imgs/linkjuju.jpg}" alt="Small Image" id="image1">
-    </a>
-    <a th:href="@{/home/growth-log}">
-        <img class="small-image small-image-2" th:src="@{/imgs/linkjuju.jpg}" alt="Small Image" id="image2">
-    </a>
-    <a th:href="@{/home/photo-album}">
-        <img class="small-image small-image-3" th:src="@{/imgs/linkjuju.jpg}" alt="Small Image" id="image3">
-    </a>
-    <a th:href="@{/home/contact}">
-        <img class="small-image small-image-4" th:src="@{/imgs/linkjuju.jpg}" alt="Small Image" id="image4">
-    </a>
+        <div class="contact-card">
+            <img src="/imgs/imgs2/240_1.jpg" alt="insta">
+            <div>
+                <p><strong>주원 instagram</strong></p>
+                <a href="https://www.instagram.com/chajuwony/" target="_blank">
+                    instagram.com/chajuwony
+                </a>
+            </div>
+        </div>
+    </div>
 
-    <div style="width: 1920px; height: 27px; left: 0px; top: 746px; position: absolute; background: #E4DBF0"></div>
-    <div style="width: 667px; height: 188px; left: -17px; top: 974px; position: absolute; text-align: center; color: #E4DBF0; font-size: 48px; font-family: Inter; font-weight: 400;">Contact</div>
-
-    <div style="width: 1100px; height: 350px; left: 410px; top: 1252px; position: absolute; background: #E4DBF0; border-radius: 30px"></div>
-    <img style="width: 180px; height: 209px; left: 511px; top: 1358px; position: absolute; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 30px" th:src="@{/imgs/imgs2/300_5.jpg}" />
-
-    <div style="width: 1100px; height: 350px; left: 410px; top: 1753px; position: absolute; background: #E4DBF0; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 30px"></div>
-
-    <a href="https://blog.naver.com/jidongdong_">
-        <div style="width: 674px; height: 52px; left: 758px; top: 1427px; position: absolute; color: black; font-size: 32px; font-family: Inter; font-weight: 400; text-decoration: underline;">https://blog.naver.com/jidongdong_</div>
-    </a>
-    <a href="https://www.instagram.com/chajuwony/">
-        <div style="width: 726px; height: 77px; left: 758px; top: 1928px; position: absolute; color: black; font-size: 32px; font-family: Inter; font-weight: 400; text-decoration: underline;">https://www.instagram.com/chajuwony/</div>
-    </a>
-
-    <div style="width: 295px; height: 38px; left: 461px; top: 1292px; position: absolute; color: black; font-size: 32px; font-family: Inter; font-weight: 400;">주원 blog</div>
-    <div style="width: 295px; height: 38px; left: 455px; top: 1803px; position: absolute; color: black; font-size: 32px; font-family: Inter; font-weight: 400;">주원 instagram</div>
-
-    <img style="width: 180px; height: 176px; left: 511px; top: 1881px; position: absolute; border-radius: 30px" th:src="@{/imgs/imgs2/240_1.jpg}" />
+    <div class="text-center">
+        <a th:href="@{/home/intro}"><img class="small-image" src="/imgs/linkjuju.jpg" alt="link" id="image1"></a>
+        <a th:href="@{/home/growth-log}"><img class="small-image" src="/imgs/linkjuju.jpg" alt="link" id="image2"></a>
+        <a th:href="@{/home/photo-album}"><img class="small-image" src="/imgs/linkjuju.jpg" alt="link" id="image3"></a>
+        <a th:href="@{/home/contact}"><img class="small-image" src="/imgs/linkjuju.jpg" alt="link" id="image4"></a>
+    </div>
 </div>
 </body>
 </html>

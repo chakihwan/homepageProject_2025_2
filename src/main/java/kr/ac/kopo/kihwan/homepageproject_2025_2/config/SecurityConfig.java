@@ -20,8 +20,8 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/login", "/home", "/home/**", "/css/**", "/imgs/**").permitAll()
-                        .anyRequest().authenticated()
+                        .requestMatchers("/", "/login", "/css/**", "/imgs/**").permitAll() // 로그인, 정적 리소스만 허용
+                        .anyRequest().authenticated() // 그 외는 인증 필요
                 )
                 .formLogin(form -> form
                         .loginPage("/login")
@@ -29,9 +29,10 @@ public class SecurityConfig {
                         .permitAll()
                 )
                 .logout(logout -> logout
-                        .logoutSuccessUrl("/home")
+                        .logoutSuccessUrl("/login")
                         .permitAll()
                 );
+
         return http.build();
     }
 

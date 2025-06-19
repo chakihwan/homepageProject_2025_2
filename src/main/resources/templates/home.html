@@ -5,71 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차주원</title>
     <link rel="stylesheet" href="/css/stylesMain.css" th:href="@{/css/stylesMain.css}">
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var imagesData = [
-                {
-                    elementId: 'mainImage1',
-                    imagePaths: ['/imgs/main_1.jpg', '/imgs/main_2.jpg', '/imgs/main_3.jpg'],
-                    currentIndex: 0
-                },
-                {
-                    elementId: 'mainImage2',
-                    imagePaths: ['/imgs/main_4.jpg', '/imgs/main_5.jpg', '/imgs/main_6.jpg'],
-                    currentIndex: 0
-                },
-                {
-                    elementId: 'mainImage3',
-                    imagePaths: ['/imgs/main_7.jpg', '/imgs/main_8.jpg', '/imgs/main_9.jpg'],
-                    currentIndex: 0
-                },
-                {
-                    elementId: 'mainImage4',
-                    imagePaths: ['/imgs/main_10.jpg', '/imgs/main_11.jpg', '/imgs/main_12.jpg'],
-                    currentIndex: 0
-                }
-            ];
-            var changeInterval = 3000;
-
-            function createImageSlider(imageData) {
-                var imgElement = document.getElementById(imageData.elementId);
-                function changeImage() {
-                    imageData.currentIndex = (imageData.currentIndex + 1) % imageData.imagePaths.length;
-                    imgElement.src = imageData.imagePaths[imageData.currentIndex];
-                }
-                setInterval(changeImage, changeInterval);
-            }
-
-            imagesData.forEach(createImageSlider);
-        });
-
-        function changeImageOnHover(element, hoverSrc, originalSrc) {
-            element.addEventListener('mouseover', () => element.src = hoverSrc);
-            element.addEventListener('mouseout', () => element.src = originalSrc);
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var images = [
-                { id: 'image1', hoverSrc: '/imgs/linkjuju_2.jpg', originalSrc: '/imgs/linkjuju.jpg' },
-                { id: 'image2', hoverSrc: '/imgs/linkjuju_2.jpg', originalSrc: '/imgs/linkjuju.jpg' },
-                { id: 'image3', hoverSrc: '/imgs/linkjuju_2.jpg', originalSrc: '/imgs/linkjuju.jpg' },
-                { id: 'image4', hoverSrc: '/imgs/linkjuju_2.jpg', originalSrc: '/imgs/linkjuju.jpg' }
-            ];
-            images.forEach(image => {
-                var imgElement = document.getElementById(image.id);
-                changeImageOnHover(imgElement, image.hoverSrc, image.originalSrc);
-            });
-        });
-    </script>
 </head>
 <body>
 <div class="container">
-    <a th:href="@{/home}">
-        <div class="box">
-            <div class="box-content"></div>
-            <div class="name">차주원</div>
-        </div>
-    </a>
+    <div class="navbar">
+        <a href="/home" class="logo">차주원</a>
+        <nav>
+            <a th:href="@{/home/intro}">소개</a>
+            <a th:href="@{/home/growth-log}">성장일지</a>
+            <a th:href="@{/home/photo-album}">사진첩</a>
+            <a th:href="@{/home/contact}">Contact</a>
+        </nav>
+    </div>
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">로그아웃</button>
+    </form>
+
     <img class="main-image" src="/imgs/main_1.jpg" alt="Main Image" id="mainImage1">
     <div class="text-center text-main">
         <span class="highlight-text">my lovely baby<br/></span>
@@ -78,6 +30,7 @@
     <a th:href="@{/home/intro}">
         <div class="button button-intro">주원이소개</div>
     </a>
+
     <img class="second-image" src="/imgs/main_4.jpg" alt="Second Image" id="mainImage2">
     <div class="text-center text-growth">
         <span class="highlight-text">since 230909<br/></span>
@@ -86,13 +39,14 @@
     <a th:href="@{/home/growth-log}">
         <div class="button button-growth">성장일지</div>
     </a>
+
     <img class="third-image" src="/imgs/main_7.jpg" alt="Third Image" id="mainImage3">
     <div class="text-center text-picture">
         <span class="highlight-text">say cheese~ 📸<br/><br/></span>
         <span>Juwon's picture</span>
     </div>
-    <img class="fourth-image" src="/imgs/main_10.jpg" alt="Fourth Image" id="mainImage4">
 
+    <img class="fourth-image" src="/imgs/main_10.jpg" alt="Fourth Image" id="mainImage4">
     <a th:href="@{/home/photo-album}">
         <div class="button button-picture">사진첩</div>
     </a>
@@ -100,23 +54,12 @@
         <div class="button button-contact">Contact</div>
     </a>
 
-    <div class="menu-item menu-contact"><a th:href="@{/home/contact}">Contact</a></div>
-    <div class="menu-item menu-picture"><a th:href="@{/home/photo-album}">사진첩</a></div>
-    <div class="menu-item menu-growth"><a th:href="@{/home/growth-log}">성장일지</a></div>
-    <div class="menu-item menu-intro"><a th:href="@{/home/intro}">주원이소개</a></div>
-
-    <a th:href="@{/home/intro}">
-        <img class="small-image small-image-1" src="/imgs/linkjuju.jpg" alt="Small Image" id="image1">
-    </a>
-    <a th:href="@{/growth-log}">
-        <img class="small-image small-image-2" src="/imgs/linkjuju.jpg" alt="Small Image" id="image2">
-    </a>
-    <a th:href="@{/photo-album}">
-        <img class="small-image small-image-3" src="/imgs/linkjuju.jpg" alt="Small Image" id="image3">
-    </a>
-    <a th:href="@{/contact}">
-        <img class="small-image small-image-4" src="/imgs/linkjuju.jpg" alt="Small Image" id="image4">
-    </a>
+    <div class="text-center">
+        <a th:href="@{/home/intro}"><img class="small-image" src="/imgs/linkjuju.jpg" id="image1" alt="Small Image"></a>
+        <a th:href="@{/home/growth-log}"><img class="small-image" src="/imgs/linkjuju.jpg" id="image2" alt="Small Image"></a>
+        <a th:href="@{/home/photo-album}"><img class="small-image" src="/imgs/linkjuju.jpg" id="image3" alt="Small Image"></a>
+        <a th:href="@{/home/contact}"><img class="small-image" src="/imgs/linkjuju.jpg" id="image4" alt="Small Image"></a>
+    </div>
 </div>
 </body>
 </html>
