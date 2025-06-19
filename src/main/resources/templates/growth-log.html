@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>차주원</title>
+    <title>차주원 - 성장일지</title>
     <link rel="stylesheet" href="/css/stylesMain.css" th:href="@{/css/stylesMain.css}">
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -64,58 +64,64 @@
 </head>
 <body>
 <div class="container">
-    <a th:href="@{/}">
+    <a th:href="@{/home}">
         <div class="box">
             <div class="box-content"></div>
             <div class="name">차주원</div>
         </div>
     </a>
-    <img class="main-image" src="/imgs/main_1.jpg" alt="Main Image" id="mainImage1">
+
+    <img class="main-image" th:src="@{/imgs/main_1.jpg}" alt="Main Image" id="mainImage1">
     <div class="text-center text-main">
         <span class="highlight-text">my lovely baby<br/></span>
         <span>J U W O N<br/><br/>2024. 9. 9 pm2:43</span>
     </div>
-    <a th:href="@{/sub1}">
+
+    <a th:href="@{/home/intro}">
         <div class="button button-intro">주원이소개</div>
     </a>
-    <img class="second-image" src="/imgs/main_4.jpg" alt="Second Image" id="mainImage2">
+
+    <img class="second-image" th:src="@{/imgs/main_4.jpg}" alt="Second Image" id="mainImage2">
     <div class="text-center text-growth">
         <span class="highlight-text">since 230909<br/></span>
         <span>A Growth Journal</span>
     </div>
-    <a th:href="@{/sub2}">
+
+    <a th:href="@{/home/growth-log}">
         <div class="button button-growth">성장일지</div>
     </a>
-    <img class="third-image" src="/imgs/main_7.jpg" alt="Third Image" id="mainImage3">
+
+    <img class="third-image" th:src="@{/imgs/main_7.jpg}" alt="Third Image" id="mainImage3">
     <div class="text-center text-picture">
         <span class="highlight-text">say cheese~ 📸<br/><br/></span>
         <span>Juwon's picture</span>
     </div>
-    <img class="fourth-image" src="/imgs/main_10.jpg" alt="Fourth Image" id="mainImage4">
 
-    <a th:href="@{/sub3}">
+    <img class="fourth-image" th:src="@{/imgs/main_10.jpg}" alt="Fourth Image" id="mainImage4">
+
+    <a th:href="@{/home/photo-album}">
         <div class="button button-picture">사진첩</div>
     </a>
-    <a th:href="@{/sub4}">
+    <a th:href="@{/home/contact}">
         <div class="button button-contact">Contact</div>
     </a>
 
-    <div class="menu-item menu-contact"><a th:href="@{/sub4}">Contact</a></div>
-    <div class="menu-item menu-picture"><a th:href="@{/sub3}">사진첩</a></div>
-    <div class="menu-item menu-growth"><a th:href="@{/sub2}">성장일지</a></div>
-    <div class="menu-item menu-intro"><a th:href="@{/sub1}">주원이소개</a></div>
+    <div class="menu-item menu-contact"><a th:href="@{/home/contact}">Contact</a></div>
+    <div class="menu-item menu-picture"><a th:href="@{/home/photo-album}">사진첩</a></div>
+    <div class="menu-item menu-growth"><a th:href="@{/home/growth-log}">성장일지</a></div>
+    <div class="menu-item menu-intro"><a th:href="@{/home/intro}">주원이소개</a></div>
 
-    <a th:href="@{/sub1}">
-        <img class="small-image small-image-1" src="/imgs/linkjuju.jpg" alt="Small Image" id="image1">
+    <a th:href="@{/home/intro}">
+        <img class="small-image small-image-1" th:src="@{/imgs/linkjuju.jpg}" alt="Small Image" id="image1">
     </a>
-    <a th:href="@{/sub2}">
-        <img class="small-image small-image-2" src="/imgs/linkjuju.jpg" alt="Small Image" id="image2">
+    <a th:href="@{/home/growth-log}">
+        <img class="small-image small-image-2" th:src="@{/imgs/linkjuju.jpg}" alt="Small Image" id="image2">
     </a>
-    <a th:href="@{/sub3}">
-        <img class="small-image small-image-3" src="/imgs/linkjuju.jpg" alt="Small Image" id="image3">
+    <a th:href="@{/home/photo-album}">
+        <img class="small-image small-image-3" th:src="@{/imgs/linkjuju.jpg}" alt="Small Image" id="image3">
     </a>
-    <a th:href="@{/sub4}">
-        <img class="small-image small-image-4" src="/imgs/linkjuju.jpg" alt="Small Image" id="image4">
+    <a th:href="@{/home/contact}">
+        <img class="small-image small-image-4" th:src="@{/imgs/linkjuju.jpg}" alt="Small Image" id="image4">
     </a>
 </div>
 </body>
