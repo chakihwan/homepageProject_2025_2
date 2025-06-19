@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/stylesSub3.css">
+    <script>
+        
+        function changeImageOnHover(element, hoverSrc, originalSrc) 
+        {
+        element.addEventListener('mouseover', function() {
+            element.src = hoverSrc;
+        });
+
+        element.addEventListener('mouseout', function() {
+            element.src = originalSrc;
+        });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() 
+        {
+            var images = [
+                { id: 'image1', hoverSrc: 'imgs/linkjuju_2.jpg', originalSrc: 'imgs/linkjuju.jpg' },
+                { id: 'image2', hoverSrc: 'imgs/linkjuju_2.jpg', originalSrc: 'imgs/linkjuju.jpg' },
+                { id: 'image3', hoverSrc: 'imgs/linkjuju_2.jpg', originalSrc: 'imgs/linkjuju.jpg' },
+                { id: 'image4', hoverSrc: 'imgs/linkjuju_2.jpg', originalSrc: 'imgs/linkjuju.jpg' }
+            ];
+
+            images.forEach(function(image) 
+            {
+                var imgElement = document.getElementById(image.id);
+                changeImageOnHover(imgElement, image.hoverSrc, image.originalSrc);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div style="width: 1920px; height: 2345px; position: relative; background: white">
+        <a href="./webProjectMain.html">
+            <div class="box">
+                <div class="box-content"></div>
+                <div class="name">차주원</div>
+            </div>
+        </a>
+        </div>
+        <div class="menu-item menu-contact"><a href="./webProjectSub4.html">Contact</a></div>
+        <div class="menu-item menu-picture"><a href="./webProjectSub3.html">사진첩</a></div>
+        <div class="menu-item menu-growth"><a href="./webProjectSub2.html">성장일지</a></div>
+        <div class="menu-item menu-intro"><a href="./webProjectSub1.html">주원이소개</a></div>
+        <a href="./webProjectSub1.html">
+            <img class="small-image small-image-1" src="imgs/linkjuju.jpg" alt="Small Image" id="image1">
+        </a>
+        <a href="./webProjectSub2.html">
+            <img class="small-image small-image-2" src="imgs/linkjuju.jpg" alt="Small Image" id="image2">
+        </a>
+        <a href="./webProjectSub3.html">
+            <img class="small-image small-image-3" src="imgs/linkjuju.jpg" alt="Small Image" id="image3">
+        </a>
+        <a href="./webProjectSub4.html">
+            <img class="small-image small-image-4" src="imgs/linkjuju.jpg" alt="Small Image" id="image4">
+        </a>
+        <div style="width: 1920px; height: 27px; left: 0px; top: 746px; position: absolute; background: #E4DBF0"></div>
+        <div style="width: 719px; height: 271px; left: 2px; top: 954px; position: absolute; text-align: center"><span style="color: #E4DBF0; font-size: 48px; font-family: Inter; font-weight: 400; word-wrap: break-word">say cheese~</span><span style="color: black; font-size: 48px; font-family: Inter; font-weight: 400; word-wrap: break-word"> 📸
+        <br/><br/>Juwon's picture</span></div>
+        <div style="width: 1762px; height: 985px; left: 89px; top: 1225px; position: absolute; background: #E4DBF0; border-radius: 30px"></div>
+      </div>
+</body>
+</html>
