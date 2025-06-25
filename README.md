@@ -18,7 +18,7 @@
 
 | 분류           | 기술명 |
 |----------------|--------|
-| 백엔드         | Java 17, Spring Boot 3.x |
+| 백엔드         | Java 17, Spring Boot 3.5 |
 | 프론트엔드     | HTML5, CSS3, JavaScript (Vanilla) |
 | 템플릿 엔진    | Thymeleaf |
 | 인증 보안      | Spring Security (InMemory 로그인) |
